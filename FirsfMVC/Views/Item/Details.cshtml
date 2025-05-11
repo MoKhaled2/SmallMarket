@@ -1,0 +1,34 @@
+﻿@model Item
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<hr />
+
+<table class="table-striped">
+    <tr>
+        <th>Item Id</th>
+        <td>@Model.id</td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <td>@Model.name</td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td>@Model.price</td>
+    </tr>
+    <tr>
+        <th>Category &ensp; </th>
+        <td>@Model.Category?.Name</td>
+    </tr>
+    <tr> 
+       <img src="~/images/@Model.ImagePath" style="width:100px" class="img-thumbnail" />
+    </tr>
+</table>
+<br />
+<a asp-action="Index" asp-controller="Item" class="btn btn-secondary">
+    back to items
+</a>
+

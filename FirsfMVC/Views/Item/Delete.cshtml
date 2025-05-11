@@ -1,0 +1,41 @@
+﻿@model Item
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<form method="post">
+    <div class="border p-2">
+        <div>
+            <h1>Delete Item</h1>
+        </div>
+        <div>
+            <label asp-for="name"></label>
+            <input asp-for="name" disabled class="form-control" />
+      
+        </div>
+        <div>
+            <label asp-for="price"></label>
+            <input asp-for="price" disabled class="form-control" />
+           
+        </div>
+        <label asp-for="CategoryId"></label>
+        <select asp-for="CategoryId" disabled class="form-control">
+            @foreach (var category in ViewBag.Categories)
+            {
+                <option value="@category.id">@category.Name</option>
+            })
+        </select>
+        <div>
+            <img src="~/images/@Model.ImagePath" style="width:50px" class="img-thumbnail" />
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">
+            Delete
+        </button>
+        <a asp-action="Index" asp-controller="Item" class="btn btn-secondary">
+            back to items
+        </a>
+
+    </div>
+</form>
+
